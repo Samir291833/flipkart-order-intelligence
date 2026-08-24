@@ -1,7 +1,115 @@
+# ============================================================
+# PYTHON
+# ============================================================
+
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
 .venv/
 venv/
-.env
-.vscode/
+env/
+ENV/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+
+# ============================================================
+# JUPYTER / NOTEBOOKS
+# ============================================================
+
 .ipynb_checkpoints/
+
+
+# ============================================================
+# MACHINE LEARNING / DATASET CACHE
+# ============================================================
+
+# Fashion-MNIST downloaded/raw dataset files
+part2/data/FashionMNIST/raw/
+
+# Cached extracted features
+part2/data/cache/
+
+# TensorFlow / Keras caches
+.keras/
+.cache/
+
+# Model checkpoints / temporary training files
+*.ckpt
+*.tmp
+
+
+# ============================================================
+# IDE / EDITORS
+# ============================================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# ============================================================
+# LOGS / TEMPORARY OUTPUT
+# ============================================================
+
+*.log
+*.bak
+*.temp
+
+
+# ============================================================
+# LOCAL ENVIRONMENT / SECRETS
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+
+# ============================================================
+# PYTHON BUILD OUTPUT
+# ============================================================
+
+build/
+dist/
+*.egg-info/
+
+
+# ============================================================
+# PART 3 GENERATED PYTHON CACHE
+# ============================================================
+
+part3/__pycache__/
+part3/*.pyc
+
+
+# ============================================================
+# DO NOT IGNORE REQUIRED SUBMISSION ARTIFACTS
+# ============================================================
+#
+# The following remain tracked:
+#
+# part1/orders_dataset.csv
+# part1/models/return_risk_model.pkl
+# part1/models/return_risk_threshold.txt
+# part2/models/product_classifier.pt
+# part2/results/confusion_matrix.csv
+# part2/results/per_class_metrics.csv
+# part2/results/test_accuracy.txt
+# indexes/policy_index.faiss
+# indexes/policy_chunks.json
+# transcripts/
+#

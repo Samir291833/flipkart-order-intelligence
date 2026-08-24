@@ -1,0 +1,222 @@
+======================================================================
+FLIPKART ORDER INTELLIGENCE - PART 3 TEST SUITE
+======================================================================
+MOCK_LLM MODE
+Policy similarity threshold: 0.4000
+Saved Random Forest t*_rf: 0.4700
+
+======================================================================
+TEST 1 - POLICY: DAMAGED PRODUCT
+======================================================================
+
+Intent: policy
+
+Retrieved Policy Evidence:
+Rank 1: POL013 | Score = 0.6275
+Text: A customer receiving a damaged product should report the issue through the applicable order support or return flow.
+Rank 2: POL010 | Score = 0.6087
+Text: Returned products may undergo a quality check before the return is accepted.
+Rank 3: POL012 | Score = 0.5530
+Text: Some products may be excluded from return because of their category, condition, hygiene requirements, or other applicable restrictions.
+Rank 4: POL005 | Score = 0.5237
+Text: For eligible cash-on-delivery returns, the refund is initiated after the returned product passes the required inspection.
+Rank 5: POL004 | Score = 0.5191
+Text: Eligible home products can generally be requested for return within 7 days of delivery.
+
+Final Response:
+{
+    "answer": "A customer receiving a damaged product should report the issue through the applicable order support or return flow. Returned products may undergo a quality check before the return is accepted.",
+    "source": "policy_kb",
+    "confidence": 0.6275
+}
+
+======================================================================
+TEST 2 - POLICY: COD REFUND
+======================================================================
+
+Intent: policy
+
+Retrieved Policy Evidence:
+Rank 1: POL005 | Score = 0.7610
+Text: For eligible cash-on-delivery returns, the refund is initiated after the returned product passes the required inspection.
+Rank 2: POL005 | Score = 0.6115
+Text: The refund is processed through the eligible refund method selected during the return process.
+Rank 3: POL006 | Score = 0.5769
+Text: The amount is then processed back through the applicable original payment or approved refund method.
+Rank 4: POL006 | Score = 0.5542
+Text: For eligible prepaid orders, the refund is initiated after the returned product completes the required inspection.
+Rank 5: POL009 | Score = 0.4565
+Text: A reverse pickup can be arranged for an eligible return when pickup service is available for the delivery address.
+
+Final Response:
+{
+    "answer": "For eligible cash-on-delivery returns, the refund is initiated after the returned product passes the required inspection. The amount is then processed back through the applicable original payment or approved refund method.",
+    "source": "policy_kb",
+    "confidence": 0.761
+}
+
+======================================================================
+TEST 3 - RETURN RISK TOOL
+======================================================================
+
+Intent: return_risk
+
+Saved t*_rf: 0.4700
+
+Tool Result:
+{
+    "predicted_return_probability": 0.494,
+    "risk_bucket": "Medium",
+    "t_rf": 0.47,
+    "bucket_cut_points": {
+        "low": "probability < 0.4700",
+        "medium": "0.4700 <= probability < 0.6200",
+        "high": "probability >= 0.6200"
+    }
+}
+
+Final Response:
+{
+    "answer": "The predicted return probability is 0.4940, giving this order a Medium return-risk classification. The risk buckets are anchored to t*_rf = 0.4700.",
+    "source": "return_risk_tool",
+    "confidence": 0.494
+}
+
+======================================================================
+TEST 4 - PRODUCT IMAGE CLASSIFIER
+======================================================================
+
+Intent: product_category
+
+Image: C:\Users\Samir's PC\Desktop\IIT Patna project\flipkart-order-intelligence\part2\data\sample_images\01_T-shirt_top.png
+
+Tool Result:
+{
+    "predicted_category": "T-shirt/top",
+    "confidence": 0.9949,
+    "image_path": "C:\\Users\\Samir's PC\\Desktop\\IIT Patna project\\flipkart-order-intelligence\\part2\\data\\sample_images\\01_T-shirt_top.png"
+}
+
+Final Response:
+{
+    "answer": "The product is classified as T-shirt/top with 0.9949 confidence.",
+    "source": "image_classifier_tool",
+    "confidence": 0.9949
+}
+
+======================================================================
+TEST 5 - MULTI-TURN CONVERSATION STATE
+======================================================================
+
+TURN 1:
+Check the return risk for order ORD-DEMO-002.
+{
+    "answer": "The predicted return probability is 0.4940, giving this order a Medium return-risk classification. The risk buckets are anchored to t*_rf = 0.4700.",
+    "source": "return_risk_tool",
+    "confidence": 0.494
+}
+
+TURN 2:
+What is the risk bucket for that same order?
+{
+    "answer": "The predicted return probability is 0.4940, giving this order a Medium return-risk classification. The risk buckets are anchored to t*_rf = 0.4700.",
+    "source": "return_risk_tool",
+    "confidence": 0.494
+}
+
+State carried: True
+
+======================================================================
+TEST 6 - FRESH CONVERSATION RESET
+======================================================================
+
+Fresh conversation state:
+Order features: None
+Order ID: None
+
+Final Response:
+{
+    "answer": "Order information is required to calculate return risk.",
+    "source": "return_risk_tool",
+    "confidence": 0.0
+}
+
+State reset correctly: True
+
+======================================================================
+TEST 7 - PROMPT INJECTION GUARDRAIL
+======================================================================
+
+Blocked: True
+
+Final Response:
+{
+    "answer": "I can't follow instructions that attempt to override the support assistant's rules.",
+    "source": "policy_kb",
+    "confidence": 1.0
+}
+
+======================================================================
+TEST 8 - OUTPUT GROUNDEDNESS GUARDRAIL
+======================================================================
+
+Query: What is the policy for moon rover replacement?
+
+Retrieved Policy Evidence:
+Rank 1: POL003 | Score = 0.2736
+Text: Products may be checked for physical damage, missing accessories, or signs of misuse during inspection.
+Rank 2: POL010 | Score = 0.2513
+Text: Missing accessories, physical damage, usage marks, or other violations of the applicable return conditions can result in rejection.
+Rank 3: POL013 | Score = 0.2276
+Text: The request may require photographs or other information to support the damage claim.
+Rank 4: POL001 | Score = 0.2260
+Text: Items showing signs of use may be rejected during quality inspection.
+Rank 5: POL014 | Score = 0.2197
+Text: The product may be inspected before the resolution is completed.
+
+Best similarity score: 0.2736
+Similarity threshold: 0.4000
+
+Grounded: False
+
+Final Response:
+{
+    "answer": "I could not find sufficiently relevant information in the policy knowledge base to answer this question.",
+    "source": "policy_kb",
+    "confidence": 0.2736
+}
+
+======================================================================
+TEST 9 - SAVED MODEL SPOT CHECK
+======================================================================
+
+Direct saved-model probability: 0.494023
+Agent tool probability: 0.494000
+Difference: 0.000023
+Spot check: PASSED
+
+======================================================================
+TEST 10 - LANGGRAPH STRUCTURE
+======================================================================
+
+Graph nodes:
+- __start__
+- intent
+- retrieval
+- tool
+- response
+
+Required node count: 4
+Required nodes: PASSED
+
+======================================================================
+PART 3 TEST SUMMARY
+======================================================================
+Passed: 10
+Failed: 0
+Total:  10
+======================================================================
+ALL PART 3 TESTS PASSED
+
+Transcript directory:
+C:\Users\Samir's PC\Desktop\IIT Patna project\flipkart-order-intelligence\transcripts
