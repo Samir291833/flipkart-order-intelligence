@@ -1,0 +1,180 @@
+PART 1 — RETURN RISK PREDICTION
+================================
+
+DATASET
+-------
+Total rows: 6000
+Total columns: 13
+Return rate: 0.2275
+Missing rating: 13.05%
+
+TRAIN / TEST SPLIT
+------------------
+Training rows: 4800
+Test rows: 1200
+Training processed shape: (4800, 18)
+Test processed shape: (1200, 18)
+
+DUMMY CLASSIFIER BASELINE
+-------------------------
+Strategy: most_frequent
+Accuracy: 0.7725
+F1-score (returned=1): 0.0000
+
+LOGISTIC REGRESSION
+-------------------
+Class weighting: balanced
+Default threshold: 0.50
+
+Accuracy: 0.5917
+F1-score: 0.3921
+Recall: 0.5788
+Precision: 0.2964
+ROC-AUC: 0.6253
+
+Best threshold: 0.44
+Best F1-score: 0.4091
+Recall: 0.7582
+Precision: 0.2801
+
+RANDOM FOREST
+-------------
+Class weighting: balanced
+Cross-validation: Stratified 5-Fold
+GridSearchCV scoring: ROC-AUC
+
+Best parameters:
+n_estimators: 100
+max_depth: 6
+
+Best cross-validated ROC-AUC: 0.6178
+Held-out test ROC-AUC: 0.6143
+
+RANDOM FOREST FEATURE IMPORTANCE
+--------------------------------
+Top 5 impurity-based features:
+
+1. categorical__payment_method_COD
+   Importance: 0.166461
+
+2. numeric__price_inr
+   Importance: 0.137116
+
+3. numeric__customer_tenure_days
+   Importance: 0.107431
+
+4. numeric__delivery_distance_km
+   Importance: 0.097244
+
+5. numeric__discount_pct
+   Importance: 0.089011
+
+PERMUTATION IMPORTANCE
+----------------------
+Original top-5 features:
+
+1. payment_method
+   Importance: 0.097461
+
+2. price_inr
+   Importance: 0.008015
+
+3. delivery_distance_km
+   Importance: -0.002711
+
+4. discount_pct
+   Importance: -0.002868
+
+5. customer_tenure_days
+   Importance: -0.005192
+
+RANDOM FOREST THRESHOLD
+-----------------------
+Best threshold (t*_rf): 0.47
+
+F1-score: 0.4030
+Recall: 0.5861
+Precision: 0.3071
+
+SUBGROUP ANALYSIS
+-----------------
+
+Product Category:
+
+Apparel
+  Test samples: 385
+  Recall: 0.5800
+  Precision: 0.3085
+
+Beauty
+  Test samples: 116
+  Recall: 0.6129
+  Precision: 0.4419
+
+Electronics
+  Test samples: 261
+  Recall: 0.4615
+  Precision: 0.2791
+
+Footwear
+  Test samples: 217
+  Recall: 0.6250
+  Precision: 0.3608
+
+Home
+  Test samples: 221
+  Recall: 0.7059
+  Precision: 0.2243
+
+
+Payment Method:
+
+COD
+  Test samples: 503
+  Recall: 0.9613
+  Precision: 0.3157
+
+Prepaid_Card
+  Test samples: 283
+  Recall: 0.0612
+  Precision: 0.2500
+
+Prepaid_UPI
+  Test samples: 294
+  Recall: 0.1250
+  Precision: 0.3158
+
+Wallet
+  Test samples: 120
+  Recall: 0.0952
+  Precision: 0.1111
+
+
+WEAKEST SUBGROUP
+----------------
+Group type: payment_method
+Group: Prepaid_Card
+Recall: 0.0612
+Precision: 0.2500
+
+MODEL ARTIFACT
+--------------
+Saved model:
+models/return_risk_model.pkl
+
+Saved threshold:
+models/return_risk_threshold.txt
+
+MODEL VERIFICATION
+------------------
+Loaded model type: Pipeline
+Classifier type: RandomForestClassifier
+Maximum probability difference: 0.0
+
+Saved threshold: 0.47
+
+Random Forest configuration:
+class_weight=balanced
+max_depth=6
+n_estimators=100
+random_state=42

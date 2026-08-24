@@ -1,0 +1,170 @@
+[
+  {
+    "chunk_id": "POL001_CH1",
+    "document_id": "POL001",
+    "title": "Apparel Return Window",
+    "text": "Apparel products can be requested for return within 7 days of delivery when the item is unused and retains its original tags and packaging."
+  },
+  {
+    "chunk_id": "POL001_CH2",
+    "document_id": "POL001",
+    "title": "Apparel Return Window",
+    "text": "Items showing signs of use may be rejected during quality inspection."
+  },
+  {
+    "chunk_id": "POL002_CH1",
+    "document_id": "POL002",
+    "title": "Footwear Return Window",
+    "text": "Footwear can be requested for return within 7 days of delivery when the product is unused and returned with its original packaging."
+  },
+  {
+    "chunk_id": "POL002_CH2",
+    "document_id": "POL002",
+    "title": "Footwear Return Window",
+    "text": "Shoes should not show outdoor wear or damage caused after delivery."
+  },
+  {
+    "chunk_id": "POL003_CH1",
+    "document_id": "POL003",
+    "title": "Electronics Return Window",
+    "text": "Eligible electronics can be requested for return within 7 days of delivery when the product meets the applicable return conditions."
+  },
+  {
+    "chunk_id": "POL003_CH2",
+    "document_id": "POL003",
+    "title": "Electronics Return Window",
+    "text": "Products may be checked for physical damage, missing accessories, or signs of misuse during inspection."
+  },
+  {
+    "chunk_id": "POL004_CH1",
+    "document_id": "POL004",
+    "title": "Home Products Return Window",
+    "text": "Eligible home products can generally be requested for return within 7 days of delivery."
+  },
+  {
+    "chunk_id": "POL004_CH2",
+    "document_id": "POL004",
+    "title": "Home Products Return Window",
+    "text": "The product should be unused and returned with its original packaging, accessories, and included components."
+  },
+  {
+    "chunk_id": "POL005_CH1",
+    "document_id": "POL005",
+    "title": "COD Refund Timeline",
+    "text": "For eligible cash-on-delivery returns, the refund is initiated after the returned product passes the required inspection."
+  },
+  {
+    "chunk_id": "POL005_CH2",
+    "document_id": "POL005",
+    "title": "COD Refund Timeline",
+    "text": "The refund is processed through the eligible refund method selected during the return process."
+  },
+  {
+    "chunk_id": "POL006_CH1",
+    "document_id": "POL006",
+    "title": "Prepaid Refund Timeline",
+    "text": "For eligible prepaid orders, the refund is initiated after the returned product completes the required inspection."
+  },
+  {
+    "chunk_id": "POL006_CH2",
+    "document_id": "POL006",
+    "title": "Prepaid Refund Timeline",
+    "text": "The amount is then processed back through the applicable original payment or approved refund method."
+  },
+  {
+    "chunk_id": "POL007_CH1",
+    "document_id": "POL007",
+    "title": "Standard Delivery SLA",
+    "text": "Standard delivery estimates are shown for the order based on the destination, seller, inventory location, and delivery service."
+  },
+  {
+    "chunk_id": "POL007_CH2",
+    "document_id": "POL007",
+    "title": "Standard Delivery SLA",
+    "text": "The displayed delivery estimate should be treated as the primary expected delivery window for the order."
+  },
+  {
+    "chunk_id": "POL008_CH1",
+    "document_id": "POL008",
+    "title": "Delayed Delivery",
+    "text": "If an order passes its displayed delivery estimate, the customer can check the latest tracking status from the order details."
+  },
+  {
+    "chunk_id": "POL008_CH2",
+    "document_id": "POL008",
+    "title": "Delayed Delivery",
+    "text": "Delivery delays can occur because of logistics, weather, operational issues, or other circumstances affecting the shipment."
+  },
+  {
+    "chunk_id": "POL009_CH1",
+    "document_id": "POL009",
+    "title": "Reverse Pickup Eligibility",
+    "text": "A reverse pickup can be arranged for an eligible return when pickup service is available for the delivery address."
+  },
+  {
+    "chunk_id": "POL009_CH2",
+    "document_id": "POL009",
+    "title": "Reverse Pickup Eligibility",
+    "text": "The returned item must satisfy the applicable return conditions before the pickup request can be completed."
+  },
+  {
+    "chunk_id": "POL010_CH1",
+    "document_id": "POL010",
+    "title": "Return Inspection",
+    "text": "Returned products may undergo a quality check before the return is accepted."
+  },
+  {
+    "chunk_id": "POL010_CH2",
+    "document_id": "POL010",
+    "title": "Return Inspection",
+    "text": "Missing accessories, physical damage, usage marks, or other violations of the applicable return conditions can result in rejection."
+  },
+  {
+    "chunk_id": "POL011_CH1",
+    "document_id": "POL011",
+    "title": "Return Request Status",
+    "text": "Customers can monitor an active return request through the order or return details."
+  },
+  {
+    "chunk_id": "POL011_CH2",
+    "document_id": "POL011",
+    "title": "Return Request Status",
+    "text": "The displayed status indicates the latest stage of pickup, inspection, refund processing, or completion."
+  },
+  {
+    "chunk_id": "POL012_CH1",
+    "document_id": "POL012",
+    "title": "Non-Returnable Conditions",
+    "text": "Some products may be excluded from return because of their category, condition, hygiene requirements, or other applicable restrictions."
+  },
+  {
+    "chunk_id": "POL012_CH2",
+    "document_id": "POL012",
+    "title": "Non-Returnable Conditions",
+    "text": "The product-specific return eligibility shown on the order should be checked before creating a return request."
+  },
+  {
+    "chunk_id": "POL013_CH1",
+    "document_id": "POL013",
+    "title": "Damaged Product Return",
+    "text": "A customer receiving a damaged product should report the issue through the applicable order support or return flow."
+  },
+  {
+    "chunk_id": "POL013_CH2",
+    "document_id": "POL013",
+    "title": "Damaged Product Return",
+    "text": "The request may require photographs or other information to support the damage claim."
+  },
+  {
+    "chunk_id": "POL014_CH1",
+    "document_id": "POL014",
+    "title": "Wrong Product Received",
+    "text": "If the delivered product does not match the ordered product, the customer can raise the issue through the order support or return flow."
+  },
+  {
+    "chunk_id": "POL014_CH2",
+    "document_id": "POL014",
+    "title": "Wrong Product Received",
+    "text": "The product may be inspected before the resolution is completed."
+  }
+]

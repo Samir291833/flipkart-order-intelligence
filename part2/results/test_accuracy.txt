@@ -1,0 +1,2 @@
+Test Accuracy: 0.886000
+Test Accuracy (%): 88.60%
