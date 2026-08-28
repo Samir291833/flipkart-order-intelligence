@@ -721,3 +721,7 @@ Only the public GitHub repository URL is submitted.
 No separate files, screenshots, slides, videos, audio files, or PDF exports are submitted.
 
 All required project artifacts are contained within this repository.
+
+Main is the default branch with all up to date commits to check and grade upon.
+
+feature/part1-return-risk is just a feature branch and should not be considered for grading.
